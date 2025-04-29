@@ -1,11 +1,13 @@
 package com.example.materialdesignjava;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +15,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -30,8 +33,19 @@ public class MainActivity extends AppCompatActivity {
         });
         setSplashScreenLoadingParameters();
         setErrorListener();
+        setButtonLogin();
 
+    }
 
+    private void setButtonLogin() {
+        MaterialButton button = findViewById(R.id.sign_in_button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), BottomAppBarActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void setErrorListener() {
