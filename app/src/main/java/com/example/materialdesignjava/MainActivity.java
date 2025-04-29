@@ -2,6 +2,8 @@ package com.example.materialdesignjava;
 
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.ViewTreeObserver;
 
@@ -10,6 +12,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,7 +29,34 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
         setSplashScreenLoadingParameters();
+        setErrorListener();
 
+
+    }
+
+    private void setErrorListener() {
+        TextInputEditText textInputEditText = findViewById(R.id.password_input_edittext);
+        textInputEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                // ничего не делаем
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                // ничего не делаем
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                TextInputLayout passwordLayout = findViewById(R.id.password_edittext);
+                if (editable != null && editable.length() < 10) {
+                    passwordLayout.setError(null); // Ошибки нет
+                } else {
+                    passwordLayout.setError(getResources().getString(R.string.incorrect_password_error));
+                }
+            }
+        });
     }
 
     private void setSplashScreenLoadingParameters() {
@@ -59,4 +91,5 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
     }
+
 }

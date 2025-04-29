@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">MaterialDesignJava</string>
     <string name="dynamic_button">Dynamic button</string>
+    <string name="first_name_hint">Your first name</string>
+    <string name="second_name_hint">Your second name</string>
+    <string name="password_hint">Your password</string>
+    <string name="password_icon_content_description">Password icon</string>
+    <string name="give_us_your_thoughts_hint">Give us your thoughts</string>
+    <string name="no_more_than_10_symbols_helper_text">No more than 10 symbols</string>
+    <string name="Sign_in_button_content_description">Sign in button</string>
+    <string name="sign_in_button">Sign in</string>
+    <string name="incorrect_password_error">Incorrect password</string>
 </resources>
