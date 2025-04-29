@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MaterialDesignJava</string>
+    <string name="dynamic_button">Dynamic button</string>
 </resources>
