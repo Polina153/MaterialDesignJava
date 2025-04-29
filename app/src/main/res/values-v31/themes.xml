@@ -1,11 +1,8 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
     <style name="Base.Theme.MaterialDesignJava" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="android:windowSplashScreenBackground">#19B1F6</item>
         <item name="android:windowSplashScreenBrandingImage">@drawable/img</item>
-    </style>
-
-    <style name="Theme.MaterialDesignJava" parent="Base.Theme.MaterialDesignJava">
-
     </style>
 </resources>
